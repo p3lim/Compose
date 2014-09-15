@@ -532,36 +532,28 @@ namespace Compose
 			if (isComposing)
 			{
 				if (e.KeyCode == modifier || e.KeyCode == Keys.Escape || e.KeyCode == Keys.Back || e.KeyCode == Keys.Enter)
-				{
-					composeIndex = 0;
-					composeString = "";
 					isComposing = false;
-				}
 				else
 				{
-					var keyCode = (int)e.KeyCode;
+					if (e.KeyCode != Keys.LShiftKey && e.KeyCode != Keys.RShiftKey)
+						composeIndex++;
+					else
+						return;
 
+					var keyCode = (int)e.KeyCode;
 					if (e.KeyCode == Keys.Space)
 						composeString += " ";
 					else if (e.Shift && upperCase.ContainsKey(keyCode))
 						composeString += upperCase[keyCode];
 					else if (!e.Shift && lowerCase.ContainsKey(keyCode))
 						composeString += lowerCase[keyCode];
-					else
-						return;
-
-					composeIndex++;
 
 					if (composeIndex == 2)
 					{
-						if (combinations.ContainsKey(composeString))
-							simulator.Keyboard.TextEntry(combinations[composeString]);
-
-						composeIndex = 0;
-						composeString = "";
 						isComposing = false;
 
-
+						if (combinations.ContainsKey(composeString))
+							simulator.Keyboard.TextEntry(combinations[composeString]);
 					}
 				}
 
@@ -573,6 +565,9 @@ namespace Compose
 				{
 					isComposing = true;
 					e.SuppressKeyPress = true;
+
+					composeIndex = 0;
+					composeString = "";
 				}
 			}
 		}
