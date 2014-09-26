@@ -552,6 +552,9 @@ namespace Compose
 					{
 						isComposing = false;
 
+						if (Settings.ShouldIndicate())
+							simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
+
 						if (combinations.ContainsKey(composeString))
 							simulator.Keyboard.TextEntry(combinations[composeString]);
 					}
@@ -563,6 +566,9 @@ namespace Compose
 			{
 				if (e.KeyCode == modifier)
 				{
+					if (Settings.ShouldIndicate())
+						simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
+
 					isComposing = true;
 					e.SuppressKeyPress = true;
 
