@@ -626,26 +626,22 @@ namespace Compose
 			return Convert.ToString(Registry.GetValue(runPath, "Compose", "")).Length != 0;
 		}
 
-		public static bool SetModifier(int modifier)
+		public static void SetModifier(int modifier)
 		{
 			Registry.SetValue(appPath, "Modifier", modifier, RegistryValueKind.DWord);
-			return true;
 		}
 
-		public static bool SetShouldIndicate(bool enabled)
+		public static void SetShouldIndicate(bool enabled)
 		{
 			Registry.SetValue(appPath, "Indicate", enabled, RegistryValueKind.DWord);
-			return true;
 		}
 
-		public static bool SetShouldAutoRun(bool enabled)
+		public static void SetShouldAutoRun(bool enabled)
 		{
 			if (enabled)
 				Registry.SetValue(runPath, "Compose", Application.ExecutablePath, RegistryValueKind.String);
 			else
 				Registry.SetValue(runPath, "Compose", "", RegistryValueKind.String);
-
-			return true;
 		}
 	}
 }
