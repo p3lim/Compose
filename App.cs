@@ -616,6 +616,11 @@ namespace Compose
 			return Convert.ToInt32(Registry.GetValue(appPath, "Modifier", 0));
 		}
 
+		public static bool ShouldIndicate()
+		{
+			return Convert.ToString(Registry.GetValue(appPath, "Indicate", 0)).Length != 0;
+		}
+
 		public static bool ShouldAutoRun()
 		{
 			return Convert.ToString(Registry.GetValue(runPath, "Compose", "")).Length != 0;
@@ -624,6 +629,12 @@ namespace Compose
 		public static bool SetModifier(int modifier)
 		{
 			Registry.SetValue(appPath, "Modifier", modifier, RegistryValueKind.DWord);
+			return true;
+		}
+
+		public static bool SetShouldIndicate(bool enabled)
+		{
+			Registry.SetValue(appPath, "Indicate", enabled, RegistryValueKind.DWord);
 			return true;
 		}
 

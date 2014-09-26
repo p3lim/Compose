@@ -33,6 +33,7 @@ namespace Compose
 		{
 			frozen = true;
 			bootCheck.Checked = Settings.ShouldAutoRun();
+			scrollToggle.Checked = Settings.ShouldIndicate();
 			frozen = false;
 
 			UpdateDetails();
@@ -48,6 +49,12 @@ namespace Compose
 		{
 			if (!frozen)
 				Settings.SetShouldAutoRun(bootCheck.Checked);
+		}
+
+		private void scrollToggle_CheckedChanged(object sender, EventArgs e)
+		{
+			if (!frozen)
+				Settings.SetShouldIndicate(scrollToggle.Checked);
 		}
 	}
 }

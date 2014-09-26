@@ -30,6 +30,7 @@
 		{
 			this.bindButton = new System.Windows.Forms.Button();
 			this.bootCheck = new System.Windows.Forms.CheckBox();
+			this.scrollToggle = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// bindButton
@@ -45,19 +46,31 @@
 			// bootCheck
 			// 
 			this.bootCheck.AutoSize = true;
-			this.bootCheck.Location = new System.Drawing.Point(13, 50);
+			this.bootCheck.Location = new System.Drawing.Point(12, 73);
 			this.bootCheck.Name = "bootCheck";
 			this.bootCheck.Size = new System.Drawing.Size(117, 17);
-			this.bootCheck.TabIndex = 1;
+			this.bootCheck.TabIndex = 2;
 			this.bootCheck.Text = "Start with Windows";
 			this.bootCheck.UseVisualStyleBackColor = true;
 			this.bootCheck.CheckedChanged += new System.EventHandler(this.bootCheck_CheckedChanged);
+			// 
+			// scrollToggle
+			// 
+			this.scrollToggle.AutoSize = true;
+			this.scrollToggle.Location = new System.Drawing.Point(12, 50);
+			this.scrollToggle.Name = "scrollToggle";
+			this.scrollToggle.Size = new System.Drawing.Size(214, 17);
+			this.scrollToggle.TabIndex = 1;
+			this.scrollToggle.Text = "Toggle ScrollLock to show current state";
+			this.scrollToggle.UseVisualStyleBackColor = true;
+			this.scrollToggle.CheckedChanged += new System.EventHandler(this.scrollToggle_CheckedChanged);
 			// 
 			// Options
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(248, 73);
+			this.ClientSize = new System.Drawing.Size(248, 97);
+			this.Controls.Add(this.scrollToggle);
 			this.Controls.Add(this.bootCheck);
 			this.Controls.Add(this.bindButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -72,5 +85,6 @@
 
 		private System.Windows.Forms.Button bindButton;
 		private System.Windows.Forms.CheckBox bootCheck;
+		private System.Windows.Forms.CheckBox scrollToggle;
 	}
 }
