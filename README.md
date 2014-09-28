@@ -61,4 +61,4 @@ Legal
 
 See the [LICENSE](https://github.com/p3lim/Amp/blob/master/LICENSE) file.
 
-The [compose icon](https://github.com/p3lim/Compose/tree/master/Icon) is licensed under the [MIT License](https://github.com/p3lim/Compose/blob/master/Icon/LICENSE) by @jxnblk.
+The [compose icon](https://github.com/p3lim/Compose/tree/master/Icon) is licensed under the [MIT License](https://github.com/p3lim/Compose/blob/master/Icon/LICENSE) by [@jxnblk](https://github.com/jxnblk).
