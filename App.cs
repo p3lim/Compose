@@ -532,7 +532,12 @@ namespace Compose
 			if (isComposing)
 			{
 				if (e.KeyCode == modifier || e.KeyCode == Keys.Escape || e.KeyCode == Keys.Back || e.KeyCode == Keys.Enter)
+				{
 					isComposing = false;
+
+					if (Settings.ShouldIndicate())
+						simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
+				}
 				else
 				{
 					if (e.KeyCode != Keys.LShiftKey && e.KeyCode != Keys.RShiftKey)
