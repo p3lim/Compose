@@ -81,16 +81,6 @@ namespace Compose {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MouseKeyboardActivityMonitor1 {
-            get {
-                object obj = ResourceManager.GetObject("MouseKeyboardActivityMonitor1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
         ///&lt;doc&gt;
         ///    &lt;assembly&gt;
@@ -106,9 +96,9 @@ namespace Compose {
         ///            &lt;summary&gt;
         ///            Only events inside the application are monitored an [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string MouseKeyboardActivityMonitor2 {
+        internal static string MouseKeyboardActivityMonitor1 {
             get {
-                return ResourceManager.GetString("MouseKeyboardActivityMonitor2", resourceCulture);
+                return ResourceManager.GetString("MouseKeyboardActivityMonitor1", resourceCulture);
             }
         }
         

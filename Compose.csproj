@@ -34,7 +34,8 @@
     <ApplicationIcon>Icon\App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MouseKeyboardActivityMonitor">
+    <Reference Include="MouseKeyboardActivityMonitor, Version=4.0.5150.10665, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\MouseKeyboardActivityMonitor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -88,9 +89,6 @@
     <EmbeddedResource Include="lib\MouseKeyboardActivityMonitor.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lib\MouseKeyboardActivityMonitor.pdb" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="lib\WindowsInput.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\MouseKeyboardActivityMonitor.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
