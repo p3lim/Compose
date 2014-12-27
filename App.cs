@@ -518,9 +518,20 @@ namespace Compose
 
 			trayIcon = new NotifyIcon();
 			trayIcon.Text = "Compose";
-			trayIcon.Icon = Resources.Icon;
+			trayIcon.Icon = Resources.Inactive;
 			trayIcon.ContextMenu = trayMenu;
 			trayIcon.Visible = true;
+		}
+
+		private void updateIndication()
+		{
+			if (isComposing)
+				trayIcon.Icon = Resources.Active;
+			else
+				trayIcon.Icon = Resources.Inactive;
+
+			if (Settings.ShouldIndicate())
+				simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
 		}
 
 		private void keyboardHook_KeyDown(object sender, KeyEventArgs e)
@@ -534,9 +545,7 @@ namespace Compose
 				if (e.KeyCode == modifier || e.KeyCode == Keys.Escape || e.KeyCode == Keys.Back || e.KeyCode == Keys.Enter)
 				{
 					isComposing = false;
-
-					if (Settings.ShouldIndicate())
-						simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
+					updateIndication();
 				}
 				else
 				{
@@ -556,9 +565,7 @@ namespace Compose
 					if (composeIndex == 2)
 					{
 						isComposing = false;
-
-						if (Settings.ShouldIndicate())
-							simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
+						updateIndication();
 
 						if (combinations.ContainsKey(composeString))
 							simulator.Keyboard.TextEntry(combinations[composeString]);
@@ -575,6 +582,8 @@ namespace Compose
 						simulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SCROLL);
 
 					isComposing = true;
+					updateIndication();
+
 					e.SuppressKeyPress = true;
 
 					composeIndex = 0;
