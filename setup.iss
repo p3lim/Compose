@@ -1,7 +1,7 @@
 [Setup]
 AppName=Compose
-AppVersion=0.1.0
-AppVerName=Compose 0.1.0
+AppVersion=1.0.0
+AppVerName=Compose 1.0.0
 AppPublisher=Adrian L Lange
 AppPublisherURL=https://github.com/p3lim/Compose#readme
 DefaultDirName={pf}\Compose
@@ -9,7 +9,7 @@ DefaultGroupName=Compose
 AllowNoIcons=yes
 LicenseFile=D:\Code\repos\Compose\LICENSE
 OutputDir=D:\Code\repos\Compose\bin\Release
-OutputBaseFilename=Compose-0.1.0
+OutputBaseFilename=Compose-1.0.0
 Compression=lzma
 SolidCompression=yes
 
